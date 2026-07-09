@@ -24,8 +24,9 @@ export function AdminHeroPage() {
       .finally(() => setLoading(false));
   }, []);
 
-  const handleChange = useCallback((updater: (prev: typeof data) => typeof data) => {
+  const handleChange = useCallback((updater: (prev: HeroData) => HeroData) => {
     setData((prev) => {
+      if (!prev) return prev;
       const next = updater(prev);
       setHasChanges(true);
       setSaveStatus("idle");

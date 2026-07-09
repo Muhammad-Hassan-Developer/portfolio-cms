@@ -8,12 +8,7 @@ import { PORTFOLIO_NAV } from "@/constants";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    return () => {};
-  }, []);
 
   useEffect(() => {
     setIsOpen(false);

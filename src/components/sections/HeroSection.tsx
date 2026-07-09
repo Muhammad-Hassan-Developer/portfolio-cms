@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Sparkles, Mail, ExternalLink, ChevronDown, AlertCircle, RefreshCw } from "lucide-react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/Button";
-import { SectionContainer } from "@/components/ui/SectionContainer";
-import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/ui/SocialIcons";
+import { Sparkles, ChevronDown, AlertCircle, RefreshCw } from "lucide-react";
 import { heroService } from "@/services/heroService";
+import { SectionContainer } from "@/components/ui/SectionContainer";
 import { HeroSkeleton } from "@/components/ui/Skeleton";
 import type { HeroData } from "@/types";
 import { aboutData } from "@/data/aboutData";
@@ -22,12 +19,6 @@ const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as const } },
 };
-
-const socialIcons = [
-  { icon: GithubIcon, url: "https://github.com/Muhammad-Hassan-Developer", label: "GitHub" },
-  { icon: LinkedinIcon, url: "https://linkedin.com/in/alexchen", label: "LinkedIn" },
-  { icon: TwitterIcon, url: "https://twitter.com/alexchen_ai", label: "Twitter" },
-];
 
 export function HeroSection() {
   const [hero, setHero] = useState<HeroData | null>(null);
